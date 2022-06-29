@@ -1,0 +1,22 @@
+/* clients  block style */
+
+.clients {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.client-list {
+    cursor: e-resize;
+    a {
+        img {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            opacity: 0.8;
+        }
+        &:hover img {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+            opacity: 1;
+        }
+    }
+}

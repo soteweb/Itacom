@@ -1,0 +1,105 @@
+/* header styles */
+
+//header
+#header {
+    transition: all .3s linear;
+    .container {
+        position: relative;
+        @include breakpoint-max($screen-md) {
+            width: 100%;
+        }
+    }
+    .logo {
+        height: 90px;
+        width: 156px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transition: all .2s linear;
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            width: 114px;
+            transition: all .3s linear;
+            img {
+                width: 100%;
+            }
+            .gray {
+                display: none;
+            }
+        }
+    }
+    &.fixed-position {
+        border: none;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        height: 66px;
+        .header-top {
+            margin-top: -37px;
+        }
+        .logo {
+            width: 145px;
+            height: 66px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            a {
+                width: 104px;
+            }
+        }
+    }
+}
+
+
+/*Fixed Header top*/
+
+.navbar-fixed-top {
+    height: 90px;
+    @include breakpoint-max($grid-float-breakpoint - 1) {
+        position: absolute;
+    }
+}
+
+
+/*Header background light*/
+
+#header.bg-light {
+    &.fixed-position {
+        background-color: rgba($white, 0.95);
+        .logo a {
+            .normal {
+                display: none;
+            }
+            .gray {
+                display: block;
+            }
+        }
+    }
+}
+
+
+/*Header background dark style*/
+
+#header.bg-dark {
+    &.fixed-position {
+        background-color: rgba(lighten($black, 13%), 0.9);
+    }
+}
+
+
+/*full width header*/
+
+.full-width .container {
+    width: 100%;
+    @include breakpoint-min($screen-md) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+/*header border bottom*/
+
+#header.bdr-btm {
+    border-bottom: 1px solid rgba($brand-primary, 0.24);
+    &.fixed-position {
+        border-bottom: 0;
+    }
+}

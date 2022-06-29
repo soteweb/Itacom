@@ -1,0 +1,121 @@
+/* Our Work Styles */
+
+.work {
+    overflow: hidden;
+    .btn {
+        margin-top: 40px;
+    }
+}
+
+.work-list {
+    &.grid:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .item-wrap {
+        position: relative;
+        overflow: hidden;
+    }
+    .grid-item {
+        width: 25%;
+        &.width2 {
+            width: 50%;
+        }
+        @include breakpoint-max($screen-sm-max) {
+            width: 50%;
+        }
+        @include breakpoint-max($screen-xs) {
+            width: 100%;
+        }
+        img {
+            min-height: 100px;
+        }
+    }
+    .item {
+        position: relative;
+        display: block;
+        z-index: 1;
+        transition: all 0.1s ease;
+        backface-visibility: hidden;
+        transition: transform 0.3s, opacity 0.3s;
+        &:after {
+            background-color: $black;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            @extend %transition;
+        }
+        img {
+            @extend %transition;
+            vertical-align: top;
+        }
+        .caption {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            .inner-caption {
+                position: absolute;
+                left: 0;
+                right: 0;
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: $white;
+                opacity: 0;
+                transition: all 0.45s ease-in-out;
+                i {
+                    font-size: $font-size-base*1.2;
+                    height: 40px;
+                    width: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    background-color: $brand-primary;
+                }
+                h4 {
+                    color: $white;
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                    font-size: $font-size-base;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+                p {
+                    margin: 0;
+                    padding: 0;
+                    font-size: $font-size-base*0.875;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    .item-wrap:hover {
+        .inner-caption {
+            opacity: 1;
+        }
+        .item {
+            opacity: 1;
+            &:after {
+                opacity: 0.5;
+            }
+            img {
+                transform: scale(1.1, 1.1);
+                backface-visibility: hidden;
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+}

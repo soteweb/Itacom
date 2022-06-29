@@ -1,0 +1,62 @@
+/* counter block styles */
+
+.count-block {
+    background-color: $primary-color;
+    color: $white;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    ul {
+        padding: 0;
+        margin-bottom: 0;
+        >li {
+            padding-left: 20px;
+            padding-right: 20px;
+            list-style: none;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            display: block;
+            overflow: hidden;
+            @include breakpoint-min($screen-sm-min) {
+                border-right: 1px solid rgba(darken($primary-color, 10%), 0.74);
+                border-left: 1px solid rgba(lighten($primary-color, 10%), 0.74);
+                &:first-child {
+                    border-left: 0;
+                }
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+            @include breakpoint-max($screen-xs-max) {
+                border-bottom: 1px solid rgba(darken($primary-color, 10%), 0.74);
+                border-top: 1px solid rgba(lighten($primary-color, 10%), 0.74);
+                &:first-child {
+                    border-top: 0;
+                }
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    .counter {
+        font-size: 52px;
+        font-weight: 700;
+        display: block;
+        line-height: 1;
+    }
+    .text {
+        text-transform: uppercase;
+        &:before {
+            display: block;
+            text-align: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            content: "\f106";
+            font: normal normal normal 30px/1 FontAwesome;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+}

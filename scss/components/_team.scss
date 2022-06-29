@@ -1,0 +1,151 @@
+/* our team block style */
+
+.team-list {
+    .owl-wrapper-outer {
+        padding-top: 10px;
+        margin-top: -10px;
+    }
+    .owl-item {
+        padding-left: $grid-gutter-width/2;
+        padding-right: $grid-gutter-width/2;
+    }
+    .item-wrap {
+        position: relative;
+        background-color: $brand-primary;
+    }
+    .item {
+        position: relative;
+        display: block;
+        z-index: 1;
+        transition: all 0.1s ease;
+        backface-visibility: hidden;
+        transition: transform 0.3s, opacity 0.3s;
+        &:after {
+            background-color: $black;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .caption {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            .social-link {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                text-transform: uppercase;
+                a {
+                    display: inline-block;
+                    color: $white;
+                    height: 40px;
+                    width: 40px;
+                    margin: 0 0.5px;
+                    background-color: rgba($white, 0.4);
+                    opacity: 0;
+                    transition: all 0.2s linear;
+                    margin-bottom: -40px;
+                    color: $primary-color;
+                    i {
+                        display: table;
+                        table-layout: fixed;
+                        text-align: center;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 20px;
+                        &:before {
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                        background-color: $primary-color;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .item-wrap:hover {
+        .item {
+            opacity: 1;
+            transform: translate(-10px, -10px);
+            &:after {
+                opacity: 0.4;
+            }
+        }
+        .social-link a {
+            opacity: 1;
+            margin-bottom: 0;
+        }
+    }
+    h4 {
+        font-size: $font-size-base;
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 3px;
+    }
+    .designation {
+        font-size: $font-size-base*0.85;
+    }
+    //owl button center
+    .owl-buttons {
+        text-align: center;
+        margin-top: 30px;
+        >div {
+            height: 40px;
+            width: 44px;
+            border: 2px solid $brand-primary;
+            font-size: 16px;
+            text-align: center;
+            transition: 0.3s linear 100ms;
+            color: $brand-primary;
+            i {
+                display: table;
+                height: 100%;
+                width: 100%;
+                &:before {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+            &.owl-prev {
+                border-radius: 100% 0 0 100%;
+                .glyphicon {
+                    margin-right: -2px;
+                }
+            }
+            &.owl-next {
+                border-radius: 0 100% 100% 0;
+                .glyphicon {
+                    margin-left: -2px;
+                }
+            }
+            &:hover,
+            &:focus {
+                background-color: $brand-primary;
+                color: $white;
+            }
+        }
+    }
+    @include breakpoint-max($screen-xs-max) {
+        .col-sm-4 {
+            margin-bottom: 40px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

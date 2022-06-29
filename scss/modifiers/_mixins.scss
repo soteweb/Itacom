@@ -1,0 +1,162 @@
+// 1. -----------   GENERAL MIXINS   ---------------
+// =================================================
+//A. EXTENDS
+// ==========
+// list reset
+// * use * - @extend %listreset;
+%listreset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// clearfix
+// * use * - @extend %clearfix;
+%clearfix {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// Inverse color scss function
+@function inverse-color($color) {
+    @if (lightness($color) > 55) {
+        @return $gray; // Lighter backgorund, return dark color
+    }
+    @else if(lightness($color) < 16) {
+        @return $gray; // Darker background, return light color
+    }
+    @else {
+        @return $white;
+    }
+}
+
+// transition
+// * use * - @extend %transition;
+%transition {
+    transition: all 0.3s linear;
+}
+
+//breakpoint min
+@mixin breakpoint-min($width) {
+    @media only screen and (min-width: #{$width}) {
+        @content;
+    }
+}
+
+//breakpoint max
+@mixin breakpoint-max($width) {
+    @media only screen and (max-width: #{$width}) {
+        @content;
+    }
+}
+
+//B. INCLUDES
+// ==========
+// TRANSFORMS
+// ============
+// generic transform
+// * use * - @include transform(scale(2, 0.5)), @include transform(translateX(10px) rotate(10deg) translateY(5px));
+@mixin transform($transforms) {
+    transform: $transforms;
+    -webkit-transform: $transforms;
+}
+
+// rotate
+// * use * - @include rotate(20);
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+// * use * - @include scale(1.2);
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// translate
+// * use * - @include translate(12px, 50%);
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// skew
+// * use * - @include skew(30, 20);
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+// * use * - @include transform-origin(100% 0);
+@mixin transform-origin ($origin) {
+    transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+}
+
+// Align block inside parent with fixed height
+// * use * - @include v-align; or @include v-align(250px); or @include v-align(250px, bottom, before);
+@mixin v-align($va-height: 100%, $va-direction: middle, $va-pseudo: after) {
+    white-space: nowrap;
+    text-align: center;
+    &:#{$va-pseudo} {
+        content: '';
+        display: inline-block;
+        vertical-align: $va-direction;
+        width: 0;
+        min-height: $va-height;
+    }
+    > * {
+        white-space: normal;
+        display: inline-block;
+        vertical-align: $va-direction;
+        max-width: 99%;
+    }
+}
+
+// vertical align a pair of child inside parent
+// * use * - @include v-align-pair(image, text) or @include v-align-pair(image, text, bottom) or @include v-align-pair(image, text, middle, 200px);
+@mixin v-align-pair($child-name1, $child-name2, $valign: middle, $width1: auto, $width2: auto) {
+    display: table;
+    .#{$child-name1} {
+        display: table-cell;
+        vertical-align: $valign;
+        width: $width1;
+    }
+    .#{$child-name2} {
+        display: table-cell;
+        vertical-align: $valign;
+        width: $width2;
+    }
+}
+
+// vertical align el
+// * use * - @include vertical-align-el;
+@mixin vertical-align-el {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// font-smothing
+// * use * - @include font-smoothing(on) or @include font-smoothing(off);
+@mixin font-smoothing($value:on) {
+    @if $value==on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+// Hides the text in an element, commonly used to show background image insted of text. Some elements will need block-level styles applied.
+// @link http://zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+// * use * - @include hide-text;
+@mixin hide-text {
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+}

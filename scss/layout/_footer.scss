@@ -1,0 +1,44 @@
+/* footer styles */
+
+#footer {
+    background-color: $footer-bg;
+    color: darken($footer-bg, 100%);
+    //border-top:3px solid $secondary-color;
+    .social-media {
+        display: block;
+        margin-bottom: 30px;
+        margin-top: 35px;
+        a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+            text-align: center;
+            color: darken($footer-bg, 100%);
+            background-color: darken($footer-bg, 8%);
+            border-radius: $border-radius-base;
+            margin-bottom: 5px;
+            i {
+                display: table;
+                width: 100%;
+                height: 100%;
+                &:before {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+            &:hover,
+            &:focus {
+                background-color: rgba($primary-color, 1);
+                text-decoration: none;
+                color: $white;
+            }
+        }
+    }
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}

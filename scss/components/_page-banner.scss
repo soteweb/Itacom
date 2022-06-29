@@ -1,0 +1,36 @@
+/* page banner style */
+
+.banner.inner {
+    height: 250px;
+    .page-title {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        h1,
+        h2 {
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            color: $white;
+            position: relative;
+            padding-bottom: 4px;
+            display: inline-block;
+            &:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 4px;
+                background-color: $white;
+                content: '';
+                display: inline-block;
+                border-radius: 4px 4px 0 0;
+                z-index: -1;
+            }
+            @include breakpoint-min($screen-xl) {
+                font-size: 36px;
+            }
+        }
+    }
+}

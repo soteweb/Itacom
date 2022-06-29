@@ -1,0 +1,47 @@
+//== global color ===
+$primary-color: #09AFDF;
+
+//brand color
+$brand-primary: 			$primary-color;
+$text-color:				#999;
+$link-color:				$brand-primary;
+$bg-body: 					#f1f1f1; //-- background color of body
+$default-heading-color:		#212121;
+$sub-title-color: 			$default-heading-color;
+
+//button
+$btn-primary-color:			$white !default;
+$btn-primary-bg: 			$brand-primary !default;
+$btn-primary-border:		$brand-primary !default;
+
+// Basics of a navbar
+$navbar-default-color:		$white !default;
+$navbar-default-bg:			transparent !default;
+$navbar-collapse-bg: 		#212121 !default;
+
+// Navbar links
+$navbar-default-link-color: 			$white !default;
+$navbar-default-link-hover-color:		$brand-primary !default;
+$navbar-default-link-hover-bg:			transparent !default;
+$navbar-default-link-active-color:		$brand-primary !default;
+$navbar-default-link-active-bg: 		transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:		transparent !default;
+$navbar-default-toggle-icon-bar-bg:		$navbar-default-link-active-color !default;
+$navbar-default-toggle-border-color:	transparent !default;
+
+//Dropdowns
+$dropdown-bg: 					rgba($navbar-collapse-bg, 0.94) !default;
+$dropdown-border: 				transparent !default;
+$dropdown-link-color: 			rgba($white, 0.75) !default; //darken($text-color, 28%)
+$dropdown-link-hover-color:		$brand-primary !default;
+$dropdown-link-hover-bg:		transparent !default;
+$dropdown-link-active-color:	$dropdown-link-hover-color !default;
+$dropdown-link-active-bg:		$dropdown-link-hover-color!default;
+$dropdown-header-color:			$white !default;
+$dropdown-caret-color:			rgba($dropdown-link-color, 0.5) !default;
+
+//footer
+$footer-bg: $white;
+

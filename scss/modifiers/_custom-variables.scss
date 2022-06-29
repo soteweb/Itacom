@@ -1,0 +1,32 @@
+// global spacing 
+$global-top-space: 		100px;
+$global-bottom-space:	100px;
+$global-space: 			90px;
+$global-md-space: 		60px;
+$global-sm-space: 		45px;
+$global-xs-space: 		30px;
+
+//breakpoint
+$screen-xl: 				1600px;
+$screen-xs: 				500px !default;
+$grid-float-breakpoint:		992px !default;
+$black: 					#000;
+$white: 					#fff;
+$font-size-base:			16px !default;
+$line-height-base:			1.6;
+
+// create font variable
+$open_sans:						'Open Sans',sans-serif;
+$font-family-base: 				$open_sans; // global font family
+$navigation-font-family:		inherit;
+$navigation-font-size:	 		$font-size-base;
+$navbar-margin-bottom: 			0 !default;
+$navbar-border-radius: 			0 !default;
+$navbar-collapse-max-height:	none !default;
+
+//By default, this inherits from the `<body>`.
+$h1-margin-bottom:		20px;
+$headings-font-family: 	inherit;
+$headings-font-weight: 	600 !default;
+$headings-line-height:	1.1 !default;
+$headings-color: 		#212121 !default;

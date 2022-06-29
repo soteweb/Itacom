@@ -1,0 +1,15 @@
+body {
+    .hero {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .content {
+        position: relative;
+        z-index: 1000;
+        background: $body-bg;
+        z-index: 2;
+    }
+}

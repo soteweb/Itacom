@@ -1,0 +1,75 @@
+/* button styles */
+
+.btn {
+    text-transform: uppercase;
+    border-radius: 0;
+    @extend %transition;
+    &.btn-default {
+        border-color: #636363;
+        &:hover {
+            background-color: $brand-primary;
+            border-color: $brand-primary;
+            color: $white;
+        }
+    }
+    &.radius {
+        border-radius: 25px;
+    }
+    &.outline {
+        background-color: transparent;
+        &.btn-info {
+            border-color: $brand-info;
+            color: $brand-info;
+            &:hover,
+            &:focus {
+                background-color: $brand-info;
+                color: $white;
+                border-color: $brand-info;
+            }
+        }
+        &.btn-primary {
+            color: $primary-color;
+            &:hover,
+            &:focus {
+                color: $white;
+                background-color: $brand-primary;
+                border-color: $brand-primary;
+            }
+        }
+    }
+    &.btn-lg {
+        border-width: 2px;
+        font-weight: 600;
+        @include breakpoint-min($screen-xl) {
+            padding: 15px 25px;
+            font-size: $font-size-base*1.125;
+        }
+        @include breakpoint-min($screen-lg) {
+            padding: 12px 25px;
+            font-size: $font-size-base;
+        }
+        @include breakpoint-min($screen-sm) {
+            padding: 10px 25px;
+            font-size: $font-size-base;
+        }
+        @include breakpoint-max($screen-xs-max) {
+            padding: 6px 22px;
+            font-size: $font-size-base*0.875;
+        }
+    }
+    &.btn-md {
+        border-width: 2px;
+        font-weight: 600;
+        @include breakpoint-min($screen-sm) {
+            padding: 6px 22px;
+            font-size: $font-size-base*0.875;
+        }
+        @include breakpoint-min($screen-lg) {
+            padding: 8px 25px;
+        }
+        @include breakpoint-max($screen-xs-max) {
+            padding: 5px 20px;
+            font-size: $font-size-base*0.875;
+        }
+    }
+}

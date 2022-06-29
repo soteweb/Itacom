@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+  <link rel="stylesheet" href="css/audio-player.css">
+  <title>Radio Streaming Itacom</title>
+</head>
+<body>
+
+  <!-- inicio reproductor de audio -->
+  <section class="audio-player card" style="margin-top:10px">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title col text-center">Radios Online</h2>
+        <div class="row align-items-center mt-4 mb-3 mx-0">
+          <i id="play-button"class="material-icons play-pause text-primary mr-2" aria-hidden="true">play_circle_outline</i>
+          <i id="pause-button"class="material-icons play-pause d-none text-primary mr-2" aria-hidden="true">pause_circle_outline</i>
+          <i id="next-button"class="material-icons text-primary ml-2 mr-3" aria-hidden="true">skip_next</i>
+          <div class="col ml-auto rounded-circle border border-primary p-1">
+            <img id="thumbnail" class="img-fluid rounded-circle" src="images/italogo400x400.jpg" alt="">
+          </div>
+        </div>
+        <div class="p-0 m-0" id="now-playing">
+          <p class="font-italic mb-0">Estás escuchando: </p>
+          <p class="lead" id="title"></p>
+        </div>
+        <div class="progress-bar progress col-12 mb-3">
+        </div>
+      </div>
+      <ul class="playlist list-group list-group-flush">
+        <li audio_url="http://aire.itacom.com.py:8000/fmrio"
+        class="list-group-item playlist-item"
+        img_url="images/italogo400x400.jpg">
+        Radio Río FM 105.1 - Encarnación</li>
+		<li audio_url="http://aire.itacom.com.py:8000/itapuafm"
+        img_url="images/italogo400x400.jpg"
+        class="active list-group-item playlist-item">
+        Radio Itapúa FM 102.5 - Encarnación</li>
+        <li audio_url="http://s23.myradiostream.com:6646/;stream.nsv"
+        class="list-group-item playlist-item"
+        img_url="images/italogo400x400.jpg">
+        Radio Encarnación FM 95.7 - Encarnación</li>
+		<li audio_url="http://45.55.241.10:8101/stream/2/"
+        class="list-group-item playlist-item"
+        img_url="images/italogo400x400.jpg">
+        Radio Pop FM 93.3 - Encarnación</li>
+		</ul>
+      <!-- <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div> -->
+  </div>
+  <audio id="audio-player" class="d-none" src="" type="audio/mp3" controls="controls"></audio>
+</section>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+<script src="js/jquery-ui-slider.js" charset="utf-8"></script>
+<script src="js/audioPlayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- fin reproductor audio -->
+</body>
+</html>

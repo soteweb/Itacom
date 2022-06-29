@@ -1,0 +1,107 @@
+/* Key Search style */
+
+.navbar-default {
+    @include breakpoint-min($screen-md-min) {
+        padding-right: 40px;
+    }
+    .search-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        >a {
+            font-size: $navigation-font-size;
+            color: $navbar-default-link-color;
+            font-family: $navigation-font-family;
+            padding: 34px 0 34px 20px;
+            transition: 0.2s linear;
+            display: inline-block;
+            &:hover,
+            &:focus {
+                color: $navbar-default-link-hover-color;
+            }
+        }
+    }
+    .search-box {
+        position: absolute;
+        left: 100%;
+        height: 100%;
+        right: 0;
+        @extend %transition;
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        .form-control {
+            border: 0;
+            background-color: transparent;
+            box-shadow: none;
+            height: 90px;
+            font-size: $navigation-font-size*1.25;
+            font-weight: 300;
+            color: $white;
+            @extend %transition;
+            padding: 0;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+    &.search-active {
+        .search-button .fa-search:before {
+            content: "\f00d";
+        }
+        .search-box {
+            opacity: 1;
+        }
+        @include breakpoint-min($grid-float-breakpoint) {
+            .navbar-nav>li {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            .search-box {
+                left: 176px;
+            }
+        }
+        @include breakpoint-max($grid-float-breakpoint - 1) {
+            .search-box {
+                left: 0;
+                .form-control {
+                    font-size: $navigation-font-size;
+                }
+            }
+            .logo,
+            .navbar-toggle {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+/* header fixed bg light */
+
+.bg-light.fixed-position .navbar-default .search-button > a,
+.bg-light.fixed-position .navbar-default .search-box .form-control {
+    color: #333;
+}
+
+
+/* header fixed */
+
+.fixed-position {
+    .navbar-default {
+        .search-button {
+            >a {
+                padding: 24px 0 34px 20px;
+                &:hover,
+                &:focus {
+                    color: darken($brand-primary, 10%);
+                }
+            }
+        }
+        .search-box .form-control {
+            height: 66px;
+        }
+    }
+}

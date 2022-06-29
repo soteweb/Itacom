@@ -1,0 +1,50 @@
+ // import link for google font
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700,800');
+ // import variables
+ @import "../modifiers/custom-variables";
+
+ 
+ /* typography */
+ 
+ h1,
+ h2,
+ h3,
+ .h3,
+ h4 {
+     margin: 0 0 20px;
+     color: $headings-color;
+     @include breakpoint-min($screen-sm) {
+         margin: 0 0 15px;
+     }
+ }
+ 
+ h1 {
+     font-size: 24px;
+     @include breakpoint-min ($screen-sm) {
+         font-size: 28px;
+     }
+     @include breakpoint-min ($screen-md) {
+         font-size: 30px;
+     }
+ }
+ 
+ h2 {
+     font-size: 24px;
+     @include breakpoint-min ($screen-sm) {
+         font-size: 26px;
+     }
+     @include breakpoint-min ($screen-md) {
+         font-size: 30px;
+     }
+ }
+ 
+ h3,
+ .h3 {
+     font-size: 18px;
+     @include breakpoint-min ($screen-sm) {
+         font-size: 20px;
+     }
+     @include breakpoint-min ($screen-md) {
+         font-size: 24px;
+     }
+ }

@@ -1,0 +1,197 @@
+/* general style for html and body */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: none;
+}
+
+video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+
+/* reset default form styles */
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="submit"],
+input[type="reset"],
+button,
+textarea,
+input[type="email"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+iframe {
+    vertical-align: top;
+}
+
+#wrap {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    display: table;
+    position: relative;
+    table-layout: fixed;
+}
+
+.form-control {
+    box-shadow: none;
+    outline: none;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+img {
+    vertical-align: top;
+    -webkit-backface-visibility: hidden;
+}
+
+.default-list {
+    @extend %listreset;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 10px 10px;
+    }
+}
+
+
+/* background stretch styles */
+
+.bg-stretch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+    img {
+        max-width: none;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* Common-box style */
+
+.common-box {
+    padding-top: $global-md-space;
+    padding-bottom: $global-md-space;
+    overflow: hidden;
+    @include breakpoint-min($screen-sm) {
+        padding-top: $global-space;
+        padding-bottom: $global-space;
+    }
+    @include breakpoint-min($screen-md) {
+        padding-top: $global-top-space;
+        padding-bottom: $global-bottom-space;
+    }
+}
+
+
+/* section Title */
+
+.section-title {
+    display: block;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 45px;
+    h2 {
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0;
+    }
+    &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        background-color: $brand-primary;
+        width: 60px;
+        height: 3px;
+    }
+    &.text-center {
+        &:after {
+            left: 50%;
+            margin-left: -30px;
+        }
+    }
+}
+
+
+/* full width image style */
+
+.fill {
+    width: 100%;
+}
+
+
+/* text block style */
+
+.text-block {
+    padding-bottom: $global-md-space;
+    @include breakpoint-min($screen-sm) {
+        padding-bottom: $global-space;
+    }
+    @include breakpoint-min($screen-md) {
+        padding-bottom: $global-bottom-space;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/* Common module style */
+
+.common-module {
+    margin-bottom: $global-xs-space;
+    overflow: hidden;
+    @include breakpoint-min($screen-sm) {
+        margin-bottom: $global-sm-space;
+    }
+    .module-title {
+        padding-bottom: 10px;
+        position: relative;
+        &:after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            content: '';
+            display: inline-block;
+            background-color: $brand-primary;
+        }
+        @include breakpoint-min($screen-md-min) {
+            font-size: 20px;
+        }
+    }
+}
+
+
+/* Small Devices, Tablets */
+
+@include breakpoint-max($screen-sm) {
+    .animated {
+        transition-property: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}

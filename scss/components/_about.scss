@@ -1,0 +1,66 @@
+/* About  block style */
+
+.about {
+    color: darken($white, 10%);
+    position: relative;
+    z-index: 1;
+    .section-title {
+        h2,
+        .sub-title {
+            color: darken($white, 10%);
+        }
+    }
+    .intro {
+        position: relative;
+    }
+    .intro:before {
+        display: inline-block;
+        content: '';
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.30em;
+    }
+    .intro-text {
+        display: inline-block;
+        font-weight: 300;
+        font-size: $font-size-base*1.125;
+        @media only screen and (min-width: $screen-lg) {
+            max-width: 570px;
+        }
+        .btn {
+            margin-top: 35px;
+        }
+    }
+}
+
+@include breakpoint-min($screen-md-min) {
+    .height {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .intro-text {
+        vertical-align: middle;
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+}
+
+@include breakpoint-max($screen-sm-max) {
+    .about {
+        text-align: center;
+        .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .height .bg-stretch {
+            position: static;
+        }
+        .intro-text {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        &.common-box {
+            padding: 0;
+        }
+    }
+}

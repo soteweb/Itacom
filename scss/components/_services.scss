@@ -1,0 +1,45 @@
+/* services style */
+
+.services {
+    ul {
+        padding: 0;
+        margin: -20px 0;
+        display: block;
+        overflow: hidden;
+        font-size: $font-size-base*0.8125;
+        >li {
+            list-style: none;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+    }
+    .icon-wrap {
+        display: inline-block;
+        i {
+            display: table;
+            table-layout: fixed;
+            height: 90px;
+            width: 90px;
+            position: relative;
+            border-radius: 50% 50% 0 50%;
+            background-color: $primary-color;
+            color: $white;
+            font-size: $font-size-base*2.2;
+            transform: rotate(45deg);
+            margin-bottom: 30px;
+            &:before {
+                display: table-cell;
+                vertical-align: middle;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    h4 {
+        font-size: $font-size-base*0.8725;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}

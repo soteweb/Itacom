@@ -1,0 +1,89 @@
+/* Price table style */
+
+.price-table {
+    color: darken($text-color, 25%);
+    .package-wrap {
+        padding: 0;
+        margin: 0 -15px;
+        >li {
+            list-style: none;
+        }
+    }
+    .item-wrap {
+        padding: 10px 10px 15px;
+        background-color: $body-bg;
+        border-radius: $border-radius-base;
+        position: relative;
+        transition: 0.4s all linear;
+        .title-wrap {
+            text-align: center;
+            margin: -10px;
+            border-radius: $border-radius-base $border-radius-base 0 0;
+            padding: 20px;
+            color: rgba($black, 0.8);
+            text-transform: capitalize;
+            border-bottom: 2px solid $brand-primary;
+            h3 {
+                margin: 0;
+                color: $brand-primary;
+                font-weight: 600;
+            }
+        }
+        .cost {
+            display: block;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            big {
+                font-weight: 600;
+                font-size: $font-size-base*2;
+                color: $black;
+            }
+        }
+        >ul {
+            margin: 0;
+            padding: 10px 0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            background-color: darken($body-bg, 4%);
+            overflow: hidden;
+            border: 1px solid darken($body-bg, 10%);
+            font-size: 13px;
+            border-radius: $border-radius-base;
+            >li {
+                list-style: none;
+                padding: 12px 20px;
+                border-bottom: 1px solid darken($body-bg, 10%);
+                &:last-child {
+                    border-bottom: 0;
+                }
+                strong {
+                    color: darken($text-color, 40%);
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .btn {
+        text-transform: none;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    .item-wrap.active {
+        .title-wrap {
+            background-color: darken($brand-primary, 10%);
+            border-bottom: 3px solid darken($brand-primary, 15%);
+            color: $white;
+            h3 {
+                color: $white;
+            }
+        }
+    }
+    @include breakpoint-max($screen-xs-max) {
+        .col-sm-4 {
+            margin-bottom: 40px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

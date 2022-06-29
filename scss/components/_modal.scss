@@ -1,0 +1,147 @@
+/* modal style */
+
+.full-modal {
+    background-color: $white;
+    color: #636363;
+    .modal-content {
+        min-height: 100vh;
+        box-shadow: none;
+        border-radius: 0;
+        border: 0;
+        position: relative;
+        padding-top: 40px;
+        .close-modal {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 17px;
+            font-size: $font-size-base*1.5;
+            display: inline-block;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.74);
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: rgba($white, 0.74);
+            i {
+                @extend %transition;
+                font-style: normal;
+                display: inline-block;
+            }
+            &:hover i {
+                color: $brand-danger;
+                transform: scale(0.8, 0.8);
+            }
+        }
+    }
+    .container.fadeIn {
+        animation-delay: 0.5s;
+        animation-direction: 0.5s;
+    }
+    .modal-banner {
+        margin-bottom: 30px;
+        position: relative;
+        .caption {
+            font-weight: 300;
+            h2 {
+                margin-bottom: 5px;
+                font-size: $font-size-base*1.5;
+                text-transform: uppercase;
+                color: $white;
+            }
+            @include breakpoint-min($screen-sm) {
+                padding: 150px 40px 40px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-image: linear-gradient(transparent, rgba(0, 0, 0, 1));
+                color: rgba($white, 0.9);
+            }
+            @include breakpoint-max($screen-xs-max) {
+                padding: 40px 20px;
+                background-color: rgba(darken($body-bg, 5%), 0.75);
+                border: 1px solid rgba(darken($body-bg, 12%), 0.75);
+                h2 {
+                    color: $headings-color;
+                }
+            }
+            .col-sm-4 {
+                @include breakpoint-min($screen-sm) {
+                    text-align: right;
+                    padding-top: 40px;
+                }
+                padding-top:30px;
+            }
+            .product-info {
+                display: block;
+                overflow: hidden;
+                padding: 10px 0 0 0;
+                margin: 0;
+                >li {
+                    list-style: none;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 30px;
+                    font-weight: 300;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    &:before {
+                        display: inline-block;
+                        font-family: FontAwesome;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        margin-right: 10px;
+                        font-size: $font-size-base*1.25;
+                        color: $brand-primary;
+                    }
+                    &.date:before {
+                        content: "\f133";
+                    }
+                    &.view:before {
+                        content: "\f06e";
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Product Highlight style*/
+
+.highlights {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    h3 {
+        margin: 0 0 15px;
+        text-transform: uppercase;
+        font-size: $font-size-base*1.25;
+        font-weight: 400;
+    }
+    ul {
+        padding-left: 20px;
+        margin: 0;
+        >li {
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 5px;
+            &:before {
+                display: inline-block;
+                content: "\f058";
+                font-family: FontAwesome;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                margin-right: 10px;
+                position: absolute;
+                left: 0;
+                color: $brand-primary;
+            }
+        }
+    }
+}
